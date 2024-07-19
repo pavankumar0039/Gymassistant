@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: rgb(233, 231, 231);">
+    <header>
+        <div class="navbar">
+
+            <div class="nlcontainer">
+                <i class="fa fas fa-solid fa-bars bars" style="font-size: x-large;"></i>
+                <div class="name">
+                    <p class="hpara">Gym</p>
+                    <p class="hpara1">Assistant</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+        <div class="heading">
+            <h1> Equipment</h1>
+            <hr>
+        </div>
+        <div class="eqp">
+            <div class="eqp1">
+                <div class="eqp2">
+
+                    <h2 class="h1">Free Weights</h2>
+                    <div class="line1"></div>
+                    <div class="eqpcont">
+                        <div class="eqpele">
+                            <div class="nameeqp">
+                                <h3>Barbell</h3>
+
+                            </div>
+                            <div class="imgeqp">
+
+                            </div>
+
+                        </div>
+                        <div class="eqpele">
+                            <div class="nameeqp">
+                                <h3>Dumbbell</h3>
+
+                            </div>
+                            <div class="imgeqp">
+
+                            </div>
+
+                        </div>
+                        <div class="eqpele">
+                            <div class="nameeqp">
+                                <h3>Kettlebell</h3>
+
+                            </div>
+                            <div class="imgeqp">
+
+                            </div>
+
+                        </div>
+                        <div class="eqpele">
+                            <div class="nameeqp">
+                                <h3>Weight Plate</h3>
+
+                            </div>
+                            <div class="imgeqp">
+
+                            </div>
+
+                        </div>
+                        <div class="eqpele">
+                            <div class="nameeqp">
+                                <h3>barbell</h3>
+
+                            </div>
+                            <div class="imgeqp">
+
+                            </div>
+
+                        </div>
+                        <div class="eqpele">
+                            <div class="nameeqp">
+                                <h3>barbell</h3>
+
+                            </div>
+                            <div class="imgeqp">
+
+                            </div>
+
+                        </div>
+                        <div class="eqpele">
+                            <div class="nameeqp">
+                                <h3>barbell</h3>
+
+                            </div>
+                            <div class="imgeqp">
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="eqp2">
+                    <h2 class="h1">Bar and Benches</h2>
+                    <div class="line1"></div>
+                    <div class="eqpcont">
+                        <div class="eqpele">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="eqp2">
+                    <h2 class="h1">Weight Machines</h2>
+                    <div class="line1"></div>
+                    <div class="eqpcont">
+                        <div class="eqpele">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="eqp2">
+                    <h2 class="h1">Other Equipment</h2>
+                    <div class="line1"></div>
+                    <div class="eqpcont">
+                        <div class="eqpele">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </main>
+
+</body>
+<script>
+
+    var eqpele = document.getElementsByClassName("eqpele");
+   
+     
+    for (let i = 0; i < eqpele.length; i++) {
+    eqpele[i].addEventListener('click', (e) => {
+        e.preventDefault();
+       
+        if (eqpele[i].classList.contains("clicked")) {
+            eqpele[i].classList.remove("clicked");
+        } else {
+            eqpele[i].classList.add("clicked");
+        }
+    });
+}
+
+
+</script>
+
+</html>

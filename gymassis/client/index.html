@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        } */
+        form {
+            display: none;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+
+        }
+
+        form::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        form::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        form::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        form::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        form.clicked {
+            display: block;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 0%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+            transition: all, cubic-bezier(0.39, 0.575, 0.565, 1), ease;
+
+        }
+
+        form.clicked {
+            display: block;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+
+
+        }
+
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(233, 231, 231);">
+    <header>
+        <div class="navbar">
+
+            <div class="nlcontainer">
+                <i class="fa fas fa-solid fa-bars bars" style="font-size: x-large;"></i>
+                <div class="name">
+                    <p class="hpara">Gym</p>
+                    <p class="hpara1">Assistant</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="sidebar">
+        <div class="scontainer1">
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-house-user ic" style="font-size: larger;margin-right: 1rem;"></i>
+                        <p class="spara1">Home</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+                        <i class="fa fas fa-solid fa-dumbbell ic" style="font-size: large;margin-right: 1rem;">
+
+                        </i>
+                        <p class="spara1">MyWorkouts</p>
+
+                    </div>
+                   
+
+                </div>
+              
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-toolbox ic" style="font-size:larger;margin-right: 1rem;"></i>
+                        <p class="spara1">Tools</p>
+
+                    </div>
+                    <i class="fa fas fa-solid fa-angle-down clik1"></i>
+                    <i class="fa fas fa-regular fa-angle-up clik2"></i>
+                </div>
+                <div class="suboptinons">
+                    <p class="sop1 sop">Calori Calculator</p>
+                    <p class="sop2 sop">Macro Calculator</p>
+                    <p class="sop3 sop">One Rep Max Cal</p>
+                </div>
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+                        <i class="fa fas fa-solid fa-dumbbell ic" style="font-size: large;margin-right: 1rem;">
+
+                        </i>
+                        <p class="spara1">Diet</p>
+
+                    </div>
+                    <i class="fa fas fa-solid fa-angle-down clik1"></i>
+                    <i class="fa fas fa-regular fa-angle-up clik2"></i>
+                </div>
+                <div class="suboptinons">
+                    <p class="sop1 sop">Muscle Gain</p>
+                    <p class="sop2 sop">Fat Loss</p>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-regular fa-chart-bar ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <p class="spara1">Routines</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-newspaper ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <p class="spara1">Articals</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-regular fa-address-card ic"
+                            style="font-size: larger;margin-right: 1rem;"></i>
+                        <a class="spara1" href="/signup.html">Register</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav" style="margin-bottom: 1rem;">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-share ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <a class="spara1" href="/login.html">login</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <main class="main1">
+
+        <form>
+            <div class="name">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="gender">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer_not_to_say">Prefer not to say</option>
+                </select>
+            </div>
+            <div class="video">
+                <label for="video">Video</label>
+                <input type="text" id="video">
+            </div>
+            <div class="image">
+                <label for="image">Image</label>
+                <input type="text" id="image">
+            </div>
+            <div class="focusarea">
+                <label for="image">FocusArea</label>
+                <input type="text" id="focusarea">
+            </div>
+            <div class="equipment">
+                <label for="image">Equipment</label>
+                <input type="text" id="equipment">
+            </div>
+            <div class="preparation">
+                <label for="preparation">Preparation</label>
+                <textarea id="preparation"></textarea>
+            </div>
+            <div class="execution">
+                <label for="execution">Execution</label>
+                <textarea id="execution"></textarea>
+            </div>
+            <div class="keytips">
+                <label for="keytips">Key Tips</label>
+                <textarea id="keytips"></textarea>
+            </div>
+            <button class="insertworkout">Done</button>
+        </form>
+
+        <div class="heading">
+            <h1> Home</h1>
+            <hr>
+        </div>
+        <div class="cont">
+            <div class="cont2">
+                <div class="cont3">
+                    <div class="gencont1">
+                        <h2>Gender</h2>
+                        <div class="line">
+
+                        </div>
+                        <p class="male">Male</p>
+                        <p class="female">Female</p>
+                    </div>
+                </div>
+                <div class="cont4">
+                    <div class="cont5">
+                        <p class="cont6 cont15">Full Body</p>
+                        <p class="cont7 cont15">Back</p>
+                        <p class="cont8 cont15">Legs</p>
+                        <p class="cont9 cont15">Shoulders</p>
+                        <p class="cont10 cont15">Chest</p>
+                        <p class="cont11 cont15">Biceps</p>
+                        <p class="cont12 cont15">Triceps</p>
+                        <p class="cont13 cont15">Arms</p>
+                        <p class="cont14 cont15">Abs</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="tcont">
+
+            <div style="display: flex;align-items: center;justify-content: space-between;">
+                <h1 style="margin-top: 4rem;">Workouts</h1>
+                <button class="addworkout">ADD</button>
+            </div>
+
+            <hr>
+            <div class="sscont">
+                <div class="sscont1">
+                </div>
+            </div>
+        </div>
+        <footer
+            style="width: 100%;height: 5rem;display: flex;justify-content: center;align-items: center;margin-top: 4rem;background-color: white;border-radius: 6px;">
+            <p
+                style="font-size: x-large;font-weight: 500;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: blueviolet;">
+                Workout @copyright</p>
+
+        </footer>
+    </main>
+   
+
+
+    </div>
+
+</body>
+<script>
+
+    let buttonworkout = document.getElementsByClassName('addworkout')
+
+    if (localStorage.getItem('adminloggedin') === 'true') {
+
+        buttonworkout[0].classList.add('clicked')
+    }
+    let form = document.getElementsByTagName('form')
+    buttonworkout[0].addEventListener('click', (e) => {
+        e.preventDefault()
+        form[0].classList.add('clicked');
+
+
+    })
+    let insertworkout = document.getElementsByClassName('insertworkout')
+    insertworkout[0].addEventListener('click', async (e) => {
+        e.preventDefault()
+        let name = document.getElementById('name').value;
+        const selectedOption = document.querySelector('#gender option:checked');
+        const selectedGender = selectedOption.value;
+        let video = document.getElementById('video').value;
+        let image = document.getElementById('image').value;
+        let preparation = document.getElementById('preparation').value;
+        let execution = document.getElementById('execution').value;
+        let focusarea = document.getElementById('focusarea').value
+        let keytips = document.getElementById('keytips').value
+        let equipment = document.getElementById('equipment').value
+        const workoutdetails = {
+            name: name,
+            gender: selectedGender,
+            video: video,
+            image: image,
+            preparation: preparation,
+            execution: execution,
+            focusarea: focusarea,
+            keytips: keytips,
+            equipment: equipment
+        }
+        try {
+            const response = await fetch('http://localhost:7000/api/insertworkoutdetails', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(workoutdetails)
+
+            })
+            const json = await response.json();
+            form[0].classList.remove('clicked')
+            if (json.success === true) {
+
+                alert("inserted succesfully");
+
+                location.reload();
+            }
+            else {
+
+
+                alert("failed to insert")
+            }
+        } catch (error) {
+            console.log(error.message)
+
+        }
+
+
+    })
+
+
+    const workoutsData = [];
+
+    const gettingWorkouts = async (work) => {
+
+        try {
+            const response = await fetch('http://localhost:7000/api/getworkoutdetails', {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const json = await response.json();
+
+            if (json.success === true) {
+                workoutsData.push(...json.data);
+                alert(json.message);
+            }
+
+        } catch (error) {
+            console.log(error.message);
+        }
+        populatingworkoutspage(workoutsData, work);
+    };
+    var cont15 = document.getElementsByClassName('cont15');
+    const work = [];
+    for (let i = 0; i < cont15.length; i++) {
+        cont15[i].addEventListener('click', (e) => {
+            e.preventDefault();
+
+            if (cont15[i].classList.contains("clicked")) {
+                cont15[i].classList.remove("clicked");
+                work.splice(work.indexOf(cont15[i].innerText), 1);
+                console.log(work)
+                gettingWorkouts(work);
+            } else {
+                cont15[i].classList.add("clicked");
+                work.push(cont15[i].innerText);
+                gettingWorkouts(work);
+            }
+
+        })
+    }
+    gettingWorkouts(work);
+
+    function populatingworkoutspage(workoutsData, work) {
+        var populatingworkouts = document.querySelector('.sscont1');
+        if (work.length == 0) {
+            const mainworkoutsarray = ["Legs", "Chest", "Shoulders", "Back", "Abs"];
+            work = mainworkoutsarray;
+        }
+        var str = "";
+
+        for (let i = 0; i < work.length; i++) {
+            str += `<div class="sscont2">
+                    <div class="sscont3">
+                        <div>
+                            <h2 class="sshead">${work[i]} Workouts</h2>
+                            <p class="sspara1">7 exercises</p>
+                        </div>
+                        <div class="ssimg"></div>
+                    </div>`;
+
+            var str1 = "";
+            var cnt = 0;
+            for (let ele of workoutsData) {
+                if (ele.focusarea.includes(work[i])) {
+                    if (cnt > 2) {
+                        break;
+                    }
+                    str1 += `<div class="sscont3">
+                            <p class="sspara2">${ele.name}</p>
+                            <p class="sspara3">4x8</p>
+                        </div>`;
+                    cnt++;
+                }
+            }
+
+            var str2 = `<div class="sscont3">
+                        <a href="">View all</a>
+                    </div>
+                </div>`;
+            str += str1 + str2;
+        }
+        populatingworkouts.innerHTML = str;
+        var sscont2 = document.getElementsByClassName('sscont2');
+        var tcont = document.getElementsByClassName('tcont');
+
+        for (let i = 0; i < sscont2.length; i++) {
+            sscont2[i].addEventListener('click', (e) => {
+                e.preventDefault();
+                sscont2[i].classList.add('clicked');
+                setTimeout(() => {
+                    var sshead = document.getElementsByClassName("sshead");
+                    let name = sshead[i].innerText;
+                    let spaceind = name.indexOf(' ');
+                    let name1 = name.substr(0, spaceind);
+                    localStorage.setItem('workout', name1)
+                    window.location.href = "./workout.html";
+                    sscont2[i].classList.remove('clicked');
+                }, 500);
+
+            });
+        }
+
+
+
+        var mpara2 = document.getElementsByClassName('mpara2');
+        var eqp = document.getElementsByClassName('eqp');
+        for (let i = 0; mpara2.length; i++) {
+            mpara2[i].addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = "./equipment.html"
+            })
+
+        }
+
+    }
+
+
+
+    var clik1 = document.getElementsByClassName("clik1")
+    var clik2 = document.getElementsByClassName("clik2")
+    var subopts = document.getElementsByClassName("suboptinons")
+
+    for (let i = 0; i < clik1.length; i++) {
+        clik1[i].addEventListener('click', (e) => {
+
+            e.preventDefault();
+            subopts[i].classList.add("clicked");
+            clik1[i].classList.add("clicked1");
+            clik2[i].classList.add("clicked2");
+        })
+        clik2[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            subopts[i].classList.remove("clicked");
+            clik1[i].classList.remove("clicked1");
+            clik2[i].classList.remove("clicked2");
+        })
+    }
+    var bars = document.querySelector(".bars");
+    var sidenav = document.querySelector(".sidebar")
+    var spara1 = document.querySelectorAll(".spara1")
+    var ic = document.getElementsByClassName("ic")
+    var main1 = document.querySelector(".main1")
+    var sop = document.getElementsByClassName("sop")
+    var clc2 = document.getElementsByClassName("clik2")
+  
+    var temp = 0;
+    bars.addEventListener('click', (e) => {
+        e.preventDefault()
+        if (temp === 0) {
+            sidenav.classList.add("clicked3")
+            for (var i = 0; i < spara1.length; i++) {
+                spara1[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < clik1.length; i++) {
+                clik1[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < ic.length; i++) {
+                ic[i].classList.add("clicked3")
+            }
+            main1.classList.add("clicked3")
+          
+            for (var i = 0; i < sop.length; i++) {
+                sop[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < clc2.length; i++) {
+                clc2[i].classList.add("clicked3")
+            }
+            temp = 1;
+        }
+        else if (temp === 1) {
+            sidenav.classList.remove("clicked3")
+            for (var i = 0; i < spara1.length; i++) {
+                spara1[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < clik1.length; i++) {
+                clik1[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < ic.length; i++) {
+                ic[i].classList.remove("clicked3")
+            }
+            main1.classList.remove("clicked3")
+           
+            for (var i = 0; i < sop.length; i++) {
+                sop[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < clc2.length; i++) {
+                clc2[i].classList.remove("clicked3")
+            }
+            temp = 0;
+
+        }
+
+    })
+    const clientarray = [];
+    const workoutsData1 = [];
+
+    const gettingWorkouts1 = async () => {
+
+        try {
+            const response = await fetch('http://localhost:7000/api/getworkoutdetails', {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const json = await response.json();
+
+            if (json.success === true) {
+                workoutsData1.push(...json.data);
+                alert(json.message);
+            }
+
+        } catch (error) {
+            console.log(error.message);
+        }
+        populatinggenrators(workoutsData1);
+    };
+    function populatinggenrators(workoutsData1) {
+        const mainworkoutsarray = ["Legs", "Chest", "Shoulders", "Back", "Abs"];
+        let str = "<h1>All Workouts</h1>";
+
+        for (let i = 0; i < mainworkoutsarray.length; i++) {
+            str += `
+            <div class="gencont3">
+                <h2>${mainworkoutsarray[i]}</h2>
+        `;
+
+            let str1 = "";
+
+            for (let ele of Object.values(workoutsData1)) {
+                if (ele.focusarea.includes(mainworkoutsarray[i])) {
+                    str1 += `
+                    <div class="mcont10">
+                        <div class="mcont9">
+                            <div class="mcont9img">
+                                <!-- Image can be added here if needed -->
+                            </div>
+                            <div class="mcont9name">
+                                <p class="m9p">${ele.name}</p>
+                                <p class="m9p1">4 Sets x 8 reps</p>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+            }
+
+            str += str1 + `</div>`;
+        }
+
+        const gencont2 = document.querySelector('.gencont2');
+        gencont2.innerHTML = str;
+        const mcont9 = document.getElementsByClassName('mcont9');
+        for (let i = 0; i < mcont9.length; i++) {
+            mcont9[i].addEventListener('click', (e) => {
+                e.preventDefault();
+                mcont9[i].classList.toggle('clicked');
+                const workoutName = mcont9[i].querySelector('.m9p').innerText;
+              
+
+                if (clientarray.indexOf(workoutName) === -1) {
+                    clientarray.push(workoutName);
+                } else {
+                    var index = clientarray.indexOf(workoutName);
+                    clientarray.splice(index, 1);
+                    localStorage.setItem('clientarray',clientarray)
+                }
+                console.log(clientarray)
+
+            });
+        }
+
+    }
+
+    var addyourworkout = document.querySelector('.addyourworkout');
+    let tem = 0;
+    addyourworkout.addEventListener('click', (e) => {
+        e.preventDefault();
+        var gencont2 = document.querySelector('.gencont2')
+        if (tem === 0) {
+            gencont2.classList.add('clicked');
+            tem = 1;
+        }
+        else if (tem === 1) {
+            gencont2.classList.remove('clicked');
+            tem = 0;
+        }
+
+
+
+        gettingWorkouts1()
+
+
+    })
+
+     
+    function changetoGenerators(){
+        Generators.classList.toggle('clicked');
+        main1.classList.toggle('clicked')
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartPage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body1">
+    <div class="bigcontianer">
+        <div class="smallcontianer">
+            <div class="nameconatiner">
+                <img src="../images/fitness-logo-gym-HH0N7N.jpg" alt="GYM" class="image1">
+            </div>
+            <div class="para1contianer">
+                <p class="para1">BodyBulding & Fitness</p>
+            </div>
+           
+
+        </div>
+        <div class="endcontainer">
+            <div class="endsmallcontainer">
+                <div class="minicontainer">
+                    <p class="para2">leap - </p>
+                    <p class="para3">fitness</p>
+                </div>
+                <div class="dots">
+                    <div class="dot1">
+
+                    </div>
+                    <div class="dot2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+   var dot1 = document.querySelector(".dot1");
+var dot2 = document.querySelector(".dot2");
+
+window.onload = function() {
+    dot1.classList.add("dotchange1");
+    dot2.classList.add("dotchange2");
+};
+
+setInterval(() => {
+    window.location.href = "../client/genderpage.html";
+}, 3000);
+
+</script>
+
+</html>

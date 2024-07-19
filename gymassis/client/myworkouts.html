@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        } */
+        form {
+            display: none;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+
+        }
+
+        form::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        form::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        form::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        form::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        form.clicked {
+            display: block;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 0%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+            transition: all, cubic-bezier(0.39, 0.575, 0.565, 1), ease;
+
+        }
+
+        form.clicked {
+            display: block;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+
+
+        }
+
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(233, 231, 231);">
+    <header>
+        <div class="navbar">
+
+            <div class="nlcontainer">
+                <i class="fa fas fa-solid fa-bars bars" style="font-size: x-large;"></i>
+                <div class="name">
+                    <p class="hpara">Gym</p>
+                    <p class="hpara1">Assistant</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="sidebar">
+        <div class="scontainer1">
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-house-user ic" style="font-size: larger;margin-right: 1rem;"></i>
+                        <p class="spara1">Home</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+                        <i class="fa fas fa-solid fa-dumbbell ic" style="font-size: large;margin-right: 1rem;">
+
+                        </i>
+                        <p class="spara1">Training</p>
+
+                    </div>
+                    <i class="fa fas fa-solid fa-angle-down clik1"></i>
+                    <i class="fa fas fa-regular fa-angle-up clik2"></i>
+
+                </div>
+                <div class="suboptinons">
+                    <p class="sop1 sop">Workouts</p>
+                    <p class="sop2 sop">Myworkouts</p>
+                    <p class="sop3 sop">Generators</p>
+                </div>
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-toolbox ic" style="font-size:larger;margin-right: 1rem;"></i>
+                        <p class="spara1">Tools</p>
+
+                    </div>
+                    <i class="fa fas fa-solid fa-angle-down clik1"></i>
+                    <i class="fa fas fa-regular fa-angle-up clik2"></i>
+                </div>
+                <div class="suboptinons">
+                    <p class="sop1 sop">Calori Calculator</p>
+                    <p class="sop2 sop">Macro Calculator</p>
+                    <p class="sop3 sop">One Rep Max Cal</p>
+                </div>
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+                        <i class="fa fas fa-solid fa-dumbbell ic" style="font-size: large;margin-right: 1rem;">
+
+                        </i>
+                        <p class="spara1">Diet</p>
+
+                    </div>
+                    <i class="fa fas fa-solid fa-angle-down clik1"></i>
+                    <i class="fa fas fa-regular fa-angle-up clik2"></i>
+                </div>
+                <div class="suboptinons">
+                    <p class="sop1 sop">Muscle Gain</p>
+                    <p class="sop2 sop">Fat Loss</p>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-regular fa-chart-bar ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <p class="spara1">Routines</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-newspaper ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <p class="spara1">Articals</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-regular fa-address-card ic"
+                            style="font-size: larger;margin-right: 1rem;"></i>
+                        <a class="spara1" href="/signup.html">Register</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav" style="margin-bottom: 1rem;">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-share ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <a class="spara1" href="/login.html">login</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+     <div class="myworkouts">
+        
+     </div>
+
+
+   
+
+</body>
+<script>
+
+
+    var clik1 = document.getElementsByClassName("clik1")
+    var clik2 = document.getElementsByClassName("clik2")
+    var subopts = document.getElementsByClassName("suboptinons")
+
+    for (let i = 0; i < clik1.length; i++) {
+        clik1[i].addEventListener('click', (e) => {
+
+            e.preventDefault();
+            subopts[i].classList.add("clicked");
+            clik1[i].classList.add("clicked1");
+            clik2[i].classList.add("clicked2");
+        })
+        clik2[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            subopts[i].classList.remove("clicked");
+            clik1[i].classList.remove("clicked1");
+            clik2[i].classList.remove("clicked2");
+        })
+    }
+    var bars = document.querySelector(".bars");
+    var sidenav = document.querySelector(".sidebar")
+    var spara1 = document.querySelectorAll(".spara1")
+    var ic = document.getElementsByClassName("ic")
+    var main1 = document.querySelector(".main1")
+    var sop = document.getElementsByClassName("sop")
+    var clc2 = document.getElementsByClassName("clik2")
+    var Generators = document.getElementsByClassName("Generators")[0]
+    var temp = 0;
+    bars.addEventListener('click', () => {
+        if (temp === 0) {
+            sidenav.classList.add("clicked3")
+            for (var i = 0; i < spara1.length; i++) {
+                spara1[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < clik1.length; i++) {
+                clik1[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < ic.length; i++) {
+                ic[i].classList.add("clicked3")
+            }
+
+            Generators.classList.add("clicked3")
+            for (var i = 0; i < sop.length; i++) {
+                sop[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < clc2.length; i++) {
+                clc2[i].classList.add("clicked3")
+            }
+            temp = 1;
+        }
+        else if (temp === 1) {
+            sidenav.classList.remove("clicked3")
+            for (var i = 0; i < spara1.length; i++) {
+                spara1[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < clik1.length; i++) {
+                clik1[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < ic.length; i++) {
+                ic[i].classList.remove("clicked3")
+            }
+
+            Generators.classList.remove("clicked3")
+            for (var i = 0; i < sop.length; i++) {
+                sop[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < clc2.length; i++) {
+                clc2[i].classList.remove("clicked3")
+            }
+            temp = 0;
+
+        }
+
+    })
+
+
+</script>
+
+</html>

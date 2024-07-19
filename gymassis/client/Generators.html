@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        } */
+        form {
+            display: none;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+
+        }
+
+        form::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        form::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        form::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        form::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        form.clicked {
+            display: block;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 0%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+            transition: all, cubic-bezier(0.39, 0.575, 0.565, 1), ease;
+
+        }
+
+        form.clicked {
+            display: block;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: fixed;
+            z-index: 4;
+            height: 81vh;
+            overflow-y: scroll;
+            right: 0rem;
+
+
+        }
+
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(233, 231, 231);">
+    <header>
+        <div class="navbar">
+
+            <div class="nlcontainer">
+                <i class="fa fas fa-solid fa-bars bars" style="font-size: x-large;"></i>
+                <div class="name">
+                    <p class="hpara">Gym</p>
+                    <p class="hpara1">Assistant</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="sidebar">
+        <div class="scontainer1">
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-house-user ic" style="font-size: larger;margin-right: 1rem;"></i>
+                        <p class="spara1">Home</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+                        <i class="fa fas fa-solid fa-dumbbell ic" style="font-size: large;margin-right: 1rem;">
+
+                        </i>
+                        <p class="spara1 sop3">myWorkouts</p>
+
+                    </div>
+                   
+
+                </div>
+               
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-toolbox ic" style="font-size:larger;margin-right: 1rem;"></i>
+                        <p class="spara1">Tools</p>
+
+                    </div>
+                    <i class="fa fas fa-solid fa-angle-down clik1"></i>
+                    <i class="fa fas fa-regular fa-angle-up clik2"></i>
+                </div>
+                <div class="suboptinons">
+                    <p class="sop1 sop">Calori Calculator</p>
+                    <p class="sop2 sop">Macro Calculator</p>
+                    <p class="sop3 sop">One Rep Max Cal</p>
+                </div>
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+                        <i class="fa fas fa-solid fa-dumbbell ic" style="font-size: large;margin-right: 1rem;">
+
+                        </i>
+                        <p class="spara1">Diet</p>
+
+                    </div>
+                    <i class="fa fas fa-solid fa-angle-down clik1"></i>
+                    <i class="fa fas fa-regular fa-angle-up clik2"></i>
+                </div>
+                <div class="suboptinons">
+                    <p class="sop1 sop">Muscle Gain</p>
+                    <p class="sop2 sop">Fat Loss</p>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-regular fa-chart-bar ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <p class="spara1">Routines</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-newspaper ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <p class="spara1">Articals</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-regular fa-address-card ic"
+                            style="font-size: larger;margin-right: 1rem;"></i>
+                        <a class="spara1" href="/signup.html">Register</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sidencont">
+                <div class="trainingicon sidenav" style="margin-bottom: 1rem;">
+                    <div class="scont1">
+
+                        <i class="fa fas fa-solid fa-share ic" style="font-size: large;margin-right: 1rem;"></i>
+                        <a class="spara1" href="/login.html">login</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="Generators">
+        <h1 class="genworkouts">Add Workouts</h1>
+        <div class="contgen1">
+
+            <div class="gencont1">
+
+            </div>
+            <div class="gencont2">
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+</body>
+<script>
+
+
+    var clik1 = document.getElementsByClassName("clik1")
+    var clik2 = document.getElementsByClassName("clik2")
+    var subopts = document.getElementsByClassName("suboptinons")
+
+    for (let i = 0; i < clik1.length; i++) {
+        clik1[i].addEventListener('click', (e) => {
+
+            e.preventDefault();
+            subopts[i].classList.add("clicked");
+            clik1[i].classList.add("clicked1");
+            clik2[i].classList.add("clicked2");
+        })
+        clik2[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            subopts[i].classList.remove("clicked");
+            clik1[i].classList.remove("clicked1");
+            clik2[i].classList.remove("clicked2");
+        })
+    }
+    var bars = document.querySelector(".bars");
+    var sidenav = document.querySelector(".sidebar")
+    var spara1 = document.querySelectorAll(".spara1")
+    var ic = document.getElementsByClassName("ic")
+    var main1 = document.querySelector(".main1")
+    var sop = document.getElementsByClassName("sop")
+    var clc2 = document.getElementsByClassName("clik2")
+    var Generators = document.getElementsByClassName("Generators")[0]
+    var temp = 0;
+    bars.addEventListener('click', () => {
+        if (temp === 0) {
+            sidenav.classList.add("clicked3")
+            for (var i = 0; i < spara1.length; i++) {
+                spara1[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < clik1.length; i++) {
+                clik1[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < ic.length; i++) {
+                ic[i].classList.add("clicked3")
+            }
+
+            Generators.classList.add("clicked3")
+            for (var i = 0; i < sop.length; i++) {
+                sop[i].classList.add("clicked3")
+            }
+            for (var i = 0; i < clc2.length; i++) {
+                clc2[i].classList.add("clicked3")
+            }
+            temp = 1;
+        }
+        else if (temp === 1) {
+            sidenav.classList.remove("clicked3")
+            for (var i = 0; i < spara1.length; i++) {
+                spara1[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < clik1.length; i++) {
+                clik1[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < ic.length; i++) {
+                ic[i].classList.remove("clicked3")
+            }
+
+            Generators.classList.remove("clicked3")
+            for (var i = 0; i < sop.length; i++) {
+                sop[i].classList.remove("clicked3")
+            }
+            for (var i = 0; i < clc2.length; i++) {
+                clc2[i].classList.remove("clicked3")
+            }
+            temp = 0;
+
+        }
+
+    })
+    const clientarray = [];
+    const workoutsData1 = [];
+
+    const gettingWorkouts1 = async () => {
+        try {
+            const response = await fetch('http://localhost:7000/api/getworkoutdetails', {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const json = await response.json();
+
+            if (json.success) {
+                workoutsData1.push(...json.data);
+                alert(json.message);
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+        populatingGenerators(workoutsData1);
+    };
+    const popultaingmyworkouts = (data) => {
+        str = '';
+        let ind = 1;
+
+        for (let ele of data) {
+            str = str + `  <div class="addyourworkout1">
+                    <div class="prevwork1">
+                        <h2 style="margin-top: 1rem;">Your Previous Workout${ind}</h2>
+                        <p style="font-size: large;font-weight: 700;">${ele.date}</p>
+                        <button key=${ele._id} class="btnprevwork">Click here</button>
+                         <button key=${ele._id} class="btnprevwork">remove</button>
+
+                    </div>
+                </div>`
+            ind++;
+        }
+        str1 = ` <button class="addyourworkout">Add</button>`
+        let gencont1 = document.querySelector(".gencont1");
+        gencont1.innerHTML =str+str1;
+
+    }
+    const gettingmyworkouts = async () => {
+        let email = 'vaishu@gmail.com'
+        try {
+            const response = await fetch('http://localhost:7000/api/gettingmyworkout', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email })
+            })
+            const json = await response.json();
+            console.log(json.data)
+            if (json.success == true) {
+                alert("fetched your workouts");
+                popultaingmyworkouts(json.data)
+
+            }
+        } catch (error) {
+            console.log(error)
+        }
+        const addyourworkout = document.querySelector('.addyourworkout');
+        let tem = 0;
+        addyourworkout.addEventListener('click', (e) => {
+            e.preventDefault();
+            const gencont2 = document.querySelector('.gencont2');
+            gencont2.classList.toggle('clicked');
+            tem = tem === 0 ? 1 : 0;
+
+            gettingWorkouts1();
+        });
+    }
+    function populatingGenerators(workoutsData1) {
+        const mainworkoutsarray = ["Legs", "Chest", "Shoulders", "Back", "Abs"];
+        let str = "<h1>All Workouts</h1>";
+
+        for (let category of mainworkoutsarray) {
+            str += `
+        <div class="gencont3">
+            <h2>${category}</h2>
+        `;
+
+            let str1 = "";
+            for (let workout of workoutsData1) {
+                if (workout.focusarea.includes(category)) {
+                    str1 += `
+                <div class="mcont10">
+                    <div class="mcont9" data-id="${workout._id}">
+                        <div class="mcont9img">
+                            <!-- Image can be added here if needed -->
+                        </div>
+                        <div class="mcont9name">
+                            <p class="m9p">${workout.name}</p>
+                            <p class="m9p1">4 Sets x 8 reps</p>
+                        </div>
+                    </div>
+                </div>`;
+                }
+            }
+            str += str1 + `</div>`;
+        }
+
+        const gencont2 = document.querySelector('.gencont2');
+        gencont2.innerHTML = str + `<button class="addtomyworkouts">Done</button>`;
+
+        const mcont9 = document.querySelectorAll('.mcont9');
+        mcont9.forEach(element => {
+            element.addEventListener('click', (e) => {
+                e.preventDefault();
+                element.classList.toggle('clicked');
+                const workoutId = element.getAttribute('data-id');
+
+                if (clientarray.includes(workoutId)) {
+                    clientarray.splice(clientarray.indexOf(workoutId), 1);
+                } else {
+                    clientarray.push(workoutId);
+                }
+            });
+        });
+
+
+        const addtomyworkouts = document.querySelector('.addtomyworkouts');
+        addtomyworkouts.addEventListener('click', async (e) => {
+            e.preventDefault();
+            console.log(clientarray);
+
+            mcont9.forEach(element => element.classList.remove('clicked'));
+            let email = 'vaishu@gmail.com'
+            const payload = {
+                clientarray: clientarray,
+                email: email
+            }
+            // localStorage.setItem('loggedinperson',email);
+            try {
+                const response = await fetch('http://localhost:7000/api/insertingmyworkout', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                const json = await response.json()
+                if (json.success === true) {
+                    alert("successfully inserted");
+                    const gencont2 = document.querySelector('.gencont2');
+                    gencont2.classList.toggle('clicked');
+                    gettingmyworkouts()
+                }
+            } catch (error) {
+                console.log(error.message)
+
+            }
+
+
+        });
+    }
+    gettingmyworkouts()
+
+
+
+
+
+
+</script>
+
+</html>
